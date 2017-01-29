@@ -6,7 +6,6 @@ describe("Routes: Tasks", () => {
   const jwtSecret = app.libs.config.jwtSecret;
   let token;
   let fakeTask;
-
   beforeEach(done => {
     Users
       .destroy({where: {}})
@@ -30,11 +29,11 @@ describe("Routes: Tasks", () => {
           .then(tasks => {
             fakeTask = tasks[0];
             token = jwt.encode({id: user.id}, jwtSecret);
-            done();
-          });
+            
+          })
+          .then(done);
       });
   });
-
   describe("GET /tasks", () => {
     describe("status 200", () => {
       it("returns a list of tasks", done => {
@@ -50,7 +49,6 @@ describe("Routes: Tasks", () => {
       });
     });
   });
-
   describe("POST /tasks", () => {
     describe("status 200", () => {
       it("creates a new task", done => {
@@ -66,7 +64,6 @@ describe("Routes: Tasks", () => {
       });
     });
   });
-
   describe("GET /tasks/:id", () => {
     describe("status 200", () => {
       it("returns one task", done => {
@@ -88,7 +85,6 @@ describe("Routes: Tasks", () => {
       });
     });
   });
-
   describe("PUT /tasks/:id", () => {
     describe("status 204", () => {
       it("updates a task", done => {
@@ -103,7 +99,6 @@ describe("Routes: Tasks", () => {
       });
     });
   });
-
   describe("DELETE /tasks/:id", () => {
     describe("status 204", () => {
       it("removes a task", done => {
