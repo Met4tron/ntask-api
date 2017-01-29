@@ -37,7 +37,7 @@ module.exports = app => {
         /** 
 
             @api {delete} /user Exclui usuario autenticado
-            @apiGroup usuário
+            @apiGroup Usuario
             @apiHeader {String} Authorization token de usuario
             @apiHeaderExample {json} Header
                 {'Authorization': 'JWT xyz.abc.123.hgf'}

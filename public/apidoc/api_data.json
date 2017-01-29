@@ -565,6 +565,54 @@
     "name": "PutTasksId"
   },
   {
+    "type": "delete",
+    "url": "/user",
+    "title": "Exclui usuario autenticado",
+    "group": "Usuario",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token de usuario</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header",
+          "content": "{'Authorization': 'JWT xyz.abc.123.hgf'}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Sucesso",
+          "content": "HTTP/1.1 204 No Content",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Erro na exclusão",
+          "content": "HTTP/1.1 412 Precondition Failed",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "routes/users.js",
+    "groupTitle": "Usuario",
+    "name": "DeleteUser"
+  },
+  {
     "type": "get",
     "url": "/user",
     "title": "Exibe usuario autenticado",
@@ -744,53 +792,5 @@
     "filename": "routes/users.js",
     "groupTitle": "Usuario",
     "name": "PostUsers"
-  },
-  {
-    "type": "delete",
-    "url": "/user",
-    "title": "Exclui usuario autenticado",
-    "group": "usu_rio",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>token de usuario</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Header",
-          "content": "{'Authorization': 'JWT xyz.abc.123.hgf'}",
-          "type": "json"
-        }
-      ]
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Sucesso",
-          "content": "HTTP/1.1 204 No Content",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "examples": [
-        {
-          "title": "Erro na exclusão",
-          "content": "HTTP/1.1 412 Precondition Failed",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "routes/users.js",
-    "groupTitle": "usu_rio",
-    "name": "DeleteUser"
   }
 ]
