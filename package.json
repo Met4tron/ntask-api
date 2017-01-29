@@ -4,7 +4,8 @@
   "description": "API de gestão de tarefas",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js --exec babel-node"
+    "start": "nodemon index.js --exec babel-node",
+    "test": "NODE_ENV=test mocha test/**/*.js"
   },
   "author": "Yuri (Caio Ribeiro)",
   "dependencies": {
@@ -19,5 +20,10 @@
     "passport-jwt": "^2.2.1",
     "sequelize": "^3.30.0",
     "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "supertest": "^2.0.1"
   }
 }
